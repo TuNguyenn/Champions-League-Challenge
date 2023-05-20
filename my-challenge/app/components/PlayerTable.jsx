@@ -34,7 +34,7 @@ const PlayerTable = () => {
               className=" w-full flex items-center mb-4 lg:px-10 md:px-10 px-2 gap-[5px] md:gap-[100px] lg:gap-[200px] border-b border-b-black border-solid border-b-black dark:border-b dark:border-b-white dark:border-solid"
             >
               <img
-                className=" w-[40%] lg:w-[20%] rounded-full"
+                className=" w-[40%] lg:w-[20%] rounded-full pb-4"
                 src={item.image}
                 alt={item.name}
               />
