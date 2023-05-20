@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { playerArray } from "./data/data";
 import { Empty } from "antd";
+import FilteredPlayerTable from "./FilteredPlayerTable";
 
 const PlayerTable = () => {
   const [selectedPosition, setSelectedPosition] = useState("");
@@ -20,21 +21,18 @@ const PlayerTable = () => {
         Player Table
       </h1>
       <div className="flex justify-end max-w-xs mx-auto md:max-w-2xl lg:max-w-7xl ">
-        <select
-          id="position"
-          value={selectedPosition}
-          onChange={handlePositionChange}
-          className="p-1 mb-5 border border-gray-300 rounded"
-        >
-          <option value="">All</option>
-          <option value="forward">Forward</option>
-          <option value="goalkeeper">Goalkeeper</option>
-        </select>
+        <FilteredPlayerTable
+          handlePositionChange={handlePositionChange}
+          selectedPosition={selectedPosition}
+        />
       </div>
       <div className="max-w-xs mx-auto overflow-scroll md:max-w-2xl lg:max-w-7xl h-96 ">
         {filteredPlayers.map((item) => {
           return (
-            <div key={item.id} className=" w-full flex items-center mb-4 lg:px-10 md:px-10 px-2 gap-[5px] md:gap-[100px] lg:gap-[200px] border-b-black dark:border-b dark:border-b-white dark:border-solid">
+            <div
+              key={item.id}
+              className=" w-full flex items-center mb-4 lg:px-10 md:px-10 px-2 gap-[5px] md:gap-[100px] lg:gap-[200px] border-b border-b-black border-solid border-b-black dark:border-b dark:border-b-white dark:border-solid"
+            >
               <img
                 className=" w-[40%] lg:w-[20%] rounded-full"
                 src={item.image}

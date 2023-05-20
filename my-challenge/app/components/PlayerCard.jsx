@@ -1,5 +1,6 @@
 import { Divider } from "antd";
 import React, { useEffect, useState } from "react";
+import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
 
 const PlayerCard = ({ player }) => {
   const { name, positions, team, image } = player;
@@ -18,6 +19,7 @@ const PlayerCard = ({ player }) => {
           <img className="w-full rounded-t-3xl" src={image} alt={name} />
         </div>
         <div className="px-6 py-4 ">
+          <MdOutlineDriveFileRenameOutline className="w-8 h-8" />
           <div
             className={` ${
               visible ? "animate-slide-in" : "opacity-0"
